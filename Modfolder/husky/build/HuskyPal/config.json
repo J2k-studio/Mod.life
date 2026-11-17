@@ -1,0 +1,11 @@
+{
+  "JumpMinTiles": 3,
+  "JumpMaxTiles": 6,
+  "DamageStep": 3,
+  "MaxDamageTier": 3,
+  "CombatLevelsPerTier": 4,
+  "LeapCooldownSeconds": 1.5,
+  "MonsterSearchTiles": 12,
+  "JoinCavesAutomatically": true,
+  "GuardBarkRadiusTiles": 6
+}

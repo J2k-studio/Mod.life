@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>HuskyPal</AssemblyName>
+    <RootNamespace>HuskyPal</RootNamespace>
+    <Version>1.0.0</Version>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputPath>build/HuskyPal/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <UseSharedCompilation>false</UseSharedCompilation>
+  </PropertyGroup>
+
+  <!-- Keep the same manual-reference approach as the older spinKer project. -->
+  <ItemGroup>
+    <Reference Include="StardewModdingAPI">
+      <HintPath>lib/StardewModdingAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="StardewValley">
+      <HintPath>lib/StardewValley.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="StardewValley.GameData">
+      <HintPath>lib/StardewValley.GameData.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>lib/MonoGame.Framework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Optional assemblies: referenced only when you add them to lib/. -->
+    <Reference Include="xTile" Condition="Exists('lib/xTile.dll')">
+      <HintPath>lib/xTile.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SMAPI.Toolkit.CoreInterfaces" Condition="Exists('lib/SMAPI.Toolkit.CoreInterfaces.dll')">
+      <HintPath>lib/SMAPI.Toolkit.CoreInterfaces.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <None Update="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="config.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="assets/**/*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

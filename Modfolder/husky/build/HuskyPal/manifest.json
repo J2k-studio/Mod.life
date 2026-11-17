@@ -1,0 +1,10 @@
+{
+  "Name": "Husky Pal",
+  "Author": "Jao",
+  "Version": "1.0.0",
+  "Description": "A derpy husky pet: nameable, follow/guard modes, pixel animations, and cave combat leaps.",
+  "UniqueID": "Jao.HuskyPal",
+  "EntryDll": "HuskyPal.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}

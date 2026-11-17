@@ -1,0 +1,18 @@
+ใส่ Managed DLL ที่ตรงกับ Stardew Valley / SMAPI Android รุ่นที่ติดตั้งอยู่ในโฟลเดอร์นี้
+
+จำเป็น (ตามรูปแบบโปรเจกต์เก่า jaokupp-main/spinKer.csproj):
+- StardewModdingAPI.dll
+- StardewValley.dll
+- MonoGame.Framework.dll
+
+อาจต้องเพิ่มตามชุด assembly และ error ที่ compiler แจ้ง:
+- xTile.dll
+- SMAPI.Toolkit.CoreInterfaces.dll
+
+Newtonsoft.Json จะ restore จาก NuGet อัตโนมัติ (13.0.3) ไม่ต้องใส่ DLL เอง
+
+สำคัญ:
+- ใช้ DLL แบบ managed .NET ไม่ใช่ไฟล์ .so
+- อย่าผสม DLL คนละเวอร์ชันของเกม/SMAPI
+- โปรเจกต์ target net9.0 เพราะ SMAPI DLL 4.3.2 ที่ผู้ใช้เคยใส่ อ้างอิง System.Runtime 9.0.0
+- ถ้าชุด Android SMAPI ที่ใช้งานจริง target framework ต่างออกไป ต้องปรับ TargetFramework ให้ตรงกับชุดนั้น
