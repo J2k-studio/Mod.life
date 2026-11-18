@@ -10,9 +10,17 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <UseSharedCompilation>false</UseSharedCompilation>
+    <DebugType>none</DebugType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
-  <!-- Keep the same manual-reference approach as the older spinKer project. -->
+  <!-- Compile only this mod's own files, so other projects in the repo are ignored. -->
+  <ItemGroup>
+    <Compile Include="ModEntry.cs" />
+    <Compile Include="ModConfig.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <Reference Include="StardewModdingAPI">
       <HintPath>lib/StardewModdingAPI.dll</HintPath>
